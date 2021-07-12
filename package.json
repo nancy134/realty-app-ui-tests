@@ -1,0 +1,19 @@
+{
+  "name": "realty-app-ui-tests",
+  "version": "1.0.0",
+  "description": "Realty App UI Tests",
+  "scripts": {
+    "signup_and_login": "env-cmd ./node_modules/.bin/mocha scripts/signup_and_login.js"
+  },
+  "author": "Nancy Piedra",
+  "license": "ISC",
+  "devDependencies": {
+    "chromedriver": "^91.0.1",
+    "mocha": "^9.0.2"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.943.0",
+    "env-cmd": "^10.1.0",
+    "selenium-webdriver": "^4.0.0-beta.4"
+  }
+}
