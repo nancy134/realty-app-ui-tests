@@ -12,7 +12,7 @@ async function confirmUser(email){
     var params = {
         UserPoolId: testData.UserPoolId,
         AttributesToGet: ['email'],
-       Filter: "email = \""+testData.userEmail+"\""        
+        Filter: "email = \""+testData.userEmail+"\""        
     };
     var users = await cognito.listUsers(params);
     var params = {
@@ -20,7 +20,6 @@ async function confirmUser(email){
         Username: users.Users[0].Username
     };
     var result = await cognito.adminConfirmSignUp(params);
-    
 }
 
 async function SignUp(driver){
@@ -42,24 +41,24 @@ async function Login(driver){
     await driver.wait(until.elementLocated(By.id('account-button-dropdown')), 10000);
 }
 describe('Signup and Login', function() {
-  this.timeout(30000)
-  let driver
-  before(async function() {
-    driver = await new Builder().forBrowser('chrome').build();
-    await driver.manage().window().maximize();
-    await driver.get("https://local.phowma.com/home")
-  })
-  beforeEach(async function(){
-  })
-  afterEach(async function(){
-  })
-  after(async function() {
-    //await driver.quit();
-  })
-  it('SignUp', async function() {
-    await SignUp(driver);
-  })
-  it('Login', async function() {
-    await Login(driver);
-  })
+    this.timeout(30000)
+    let driver
+    before(async function() {
+        driver = await new Builder().forBrowser('chrome').build();
+        await driver.manage().window().maximize();
+        await driver.get("https://local.phowma.com/home")
+    })
+    beforeEach(async function(){
+    })
+    afterEach(async function(){
+    })
+    after(async function() {
+        await driver.quit();
+    })
+    it('SignUp', async function() {
+        await SignUp(driver);
+    })
+    it('Login', async function() {
+        await Login(driver);
+    })
 })
