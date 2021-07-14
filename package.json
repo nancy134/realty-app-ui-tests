@@ -4,7 +4,8 @@
   "description": "Realty App UI Tests",
   "scripts": {
     "signup_and_login": "env-cmd ./node_modules/.bin/mocha scripts/signup_and_login.js",
-    "add_listing" : "env-cmd ./node_modules/.bin/mocha scripts/add_listing.js"
+    "add_listing" : "env-cmd ./node_modules/.bin/mocha scripts/add_listing.js",
+    "associates" : "env-cmd ./node_modules/.bin/mocha scripts/associates.js"
   },
   "author": "Nancy Piedra",
   "license": "ISC",
